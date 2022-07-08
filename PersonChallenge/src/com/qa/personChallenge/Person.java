@@ -19,27 +19,8 @@ public class Person extends People {
 
 	@Override
 	public String makeString() {
-		String details = (getName() + " is " + getAge() + " years old.\nThey Work as a " + getJob());
+		String details = (getName() + " is " + getAge() + " years old and works as a " + getJob() + "\n\n");
 		return details;
-	}
-
-	public void lookup() {
-		Scanner scan = new Scanner(System.in);
-		System.out.println("\t\tSEARCH ITEMS");
-		System.out.println("Enter item name: ");
-		String nameSearch = scan.nextLine();
-		for (int i = 0; i < people.size(); i++) {
-			if (people.get(i).getName().equalsIgnoreCase(nameSearch)) {
-				System.out.println("\t\t[" + nameSearch.toUpperCase() + " FOUND IN DATABASE]");
-				scan.close();
-				System.out.println("Name: " + people.get(i).getName() + " | Age: " + people.get(i).getAge() + " | Job: " + people.get(i).getJob());
-				break;
-			} else {
-				System.out.println("\t\t[" + nameSearch.toUpperCase() + " NOT IN DATABASE]");
-				scan.close();
-				break;
-			}
-		}
 	}
 
 	public String getName() {

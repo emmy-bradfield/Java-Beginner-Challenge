@@ -23,19 +23,24 @@ public class Main {
 		
 		Scanner scan = new Scanner(System.in);
 		System.out.println("\t\tSEARCH ITEMS");
-		System.out.println("Enter item name: ");
+		System.out.print("\tEnter item name: ");
 		String nameSearch = scan.nextLine();
+		System.out.println("");
 		for (int i = 0; i < people.size(); i++) {
 			if (people.get(i).getName().equalsIgnoreCase(nameSearch)) {
-				System.out.println("\t\t[" + nameSearch.toUpperCase() + " FOUND IN DATABASE]");
+				System.out.println("\t[" + nameSearch.toUpperCase() + " FOUND IN DATABASE]");
 				scan.close();
-				System.out.println("Name: " + people.get(i).getName() + " | Age: " + people.get(i).getAge() + " | Job: " + people.get(i).getJob());
+				System.out.println("Name: " + people.get(i).getName() + " | Age: " + people.get(i).getAge() + " | Job: " + people.get(i).getJob() + "\n\n");
 				break;
 			} else {
-				System.out.println("\t\t[" + nameSearch.toUpperCase() + " NOT IN DATABASE]");
+				System.out.println("\t[" + nameSearch.toUpperCase() + " NOT IN DATABASE]\n\n");
 				scan.close();
 				break;
 			}
+		}
+		
+		for (int i = 0; i < people.size();i++) {
+			System.out.println("ENTRY " + (i+1) + " ---->\t" + people.get(i).getName() + ", " + people.get(i).getAge() + ", " + people.get(i).getJob());
 		}
 	}
 	
