@@ -20,6 +20,7 @@ public class Car extends Vehicle {
 		this.Automatic = Automatic;
 	}
 
+
 	// Getters and Setters
 	public String getMake() {
 		return Make;
@@ -66,7 +67,7 @@ public class Car extends Vehicle {
 			} else if (Make == "Ford" || Make == "Volkswagen") {
 				perWheel = 50;
 			}
-			CostOfWork = +(WheelsReplace * perWheel);
+			CostOfWork =+ (WheelsReplace * perWheel);
 		}
 		if (EngineFault == true) {
 			getAutomatic();
